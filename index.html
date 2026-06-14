@@ -699,14 +699,12 @@
         .gallery-inner {
             width: 100%;
             height: 100%;
-            background: var(--dark2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            position: relative;
             min-height: inherit;
+            position: relative;
+            overflow: hidden;
         }
+
+
 
         .gallery-item:hover .gallery-inner {
             transform: scale(1.04);
@@ -738,12 +736,19 @@
         .gallery-car {
             width: 100%;
             height: 100%;
-            min-height: inherit;
-            position: relative;
+            position: absolute;
+            inset: 0;
             overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: block;
+        }
+
+        /* rasm uchun alohida style */
+        .gallery-car img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.6s ease;
         }
 
         .car-silhouette {
@@ -1400,7 +1405,7 @@
             }
 
             .gallery-item {
-                min-height: 220px !important;
+                position: relative;
             }
 
             footer {
@@ -1596,49 +1601,49 @@
             </div>
             <div class="services-grid">
 
-                <div class="service-card" data-aos="fade-up" data-aos-delay="50" onclick="openLightbox()">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="50">
                     <span class="service-num">01</span>
                     <span class="service-icon">🔇</span>
                     <div class="service-name" data-i18n="svc1_name"></div>
                     <div class="service-desc" data-i18n="svc1_desc"></div>
                 </div>
-                <div class="service-card" data-aos="fade-up" data-aos-delay="100" onclick="openLightbox()">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <span class="service-num">02</span>
                     <span class="service-icon">✨</span>
                     <div class="service-name" data-i18n="svc2_name"></div>
                     <div class="service-desc" data-i18n="svc2_desc"></div>
                 </div>
-                <div class="service-card" data-aos="fade-up" data-aos-delay="150" onclick="openLightbox()">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="150">
                     <span class="service-num">03</span>
                     <span class="service-icon">🛡️</span>
                     <div class="service-name" data-i18n="svc3_name"></div>
                     <div class="service-desc" data-i18n="svc3_desc"></div>
                 </div>
-                <div class="service-card" data-aos="fade-up" data-aos-delay="200" onclick="openLightbox()">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                     <span class="service-num">04</span>
                     <span class="service-icon">🧹</span>
                     <div class="service-name" data-i18n="svc4_name"></div>
                     <div class="service-desc" data-i18n="svc4_desc"></div>
                 </div>
-                <div class="service-card" data-aos="fade-up" data-aos-delay="250" onclick="openLightbox()">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="250">
                     <span class="service-num">05</span>
                     <span class="service-icon">🕶️</span>
                     <div class="service-name" data-i18n="svc5_name"></div>
                     <div class="service-desc" data-i18n="svc5_desc"></div>
                 </div>
-                <div class="service-card" data-aos="fade-up" data-aos-delay="300" onclick="openLightbox()">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
                     <span class="service-num">06</span>
                     <span class="service-icon">🚗</span>
                     <div class="service-name" data-i18n="svc6_name"></div>
                     <div class="service-desc" data-i18n="svc6_desc"></div>
                 </div>
-                <div class="service-card" data-aos="fade-up" data-aos-delay="350" onclick="openLightbox()">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="350">
                     <span class="service-num">07</span>
                     <span class="service-icon">💺</span>
                     <div class="service-name" data-i18n="svc7_name"></div>
                     <div class="service-desc" data-i18n="svc7_desc"></div>
                 </div>
-                <div class="service-card" data-aos="fade-up" data-aos-delay="400" onclick="openLightbox()">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
                     <span class="service-num">08</span>
                     <span class="service-icon">💡</span>
                     <div class="service-name" data-i18n="svc8_name"></div>
@@ -1683,21 +1688,10 @@
             </div>
             <div class="gallery-grid">
 
-                <div class="gallery-item" data-aos="fade-up" data-aos-delay="0" onclick="openLightbox()">
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="0">
                     <div class="gallery-inner g1">
                         <div class="gallery-car">
-                            <svg class="car-silhouette" viewBox="0 0 500 200" width="80%" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M60 130 C60 130 90 115 140 100 L180 72 C195 64 220 58 260 57 C300 56 340 62 375 72 L430 100 C455 112 465 124 465 130 L465 152 C465 156 462 158 459 158 L430 158 C428 148 415 142 400 142 C385 142 372 148 370 158 L145 158 C143 148 130 142 115 142 C100 142 87 148 85 158 L60 158 C57 158 54 156 54 152 Z"
-                                    fill="white" />
-                                <ellipse cx="115" cy="158" rx="26" ry="26" fill="white" />
-                                <ellipse cx="400" cy="158" rx="26" ry="26" fill="white" />
-                                <ellipse cx="115" cy="158" rx="14" ry="14" fill="#050a0e" />
-                                <ellipse cx="400" cy="158" rx="14" ry="14" fill="#050a0e" />
-                                <path d="M175 100 L192 70 C196 63 210 59 260 57.5 C310 56 335 63 360 72 L380 100 Z"
-                                    fill="#050a0e" opacity="0.6" />
-                            </svg>
+                            <img src="shumkajen.jpg" alt="Gallery Image 1">
                             <div
                                 style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,40,60,0.5) 0%,transparent 60%);">
                             </div>
@@ -1709,86 +1703,46 @@
                     </div>
                 </div>
 
-                <div class="gallery-item" data-aos="fade-up" data-aos-delay="80" onclick="openLightbox()">
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="80">
                     <div class="gallery-inner g2">
                         <div class="gallery-car">
-                            <svg class="car-silhouette" viewBox="0 0 400 160" width="75%" fill="none">
-                                <path
-                                    d="M45 105 C45 105 75 92 115 80 L145 58 C158 52 178 47 210 46 C242 45 275 50 300 60 L345 80 C365 90 372 100 372 105 L372 122 C372 125 370 127 367 127 L345 127 C343 120 332 115 320 115 C308 115 297 120 295 127 L110 127 C108 120 97 115 85 115 C73 115 62 120 60 127 L45 127 C42 127 40 125 40 122 Z"
-                                    fill="white" />
-                                <ellipse cx="85" cy="127" rx="20" ry="20" fill="white" />
-                                <ellipse cx="320" cy="127" rx="20" ry="20" fill="white" />
-                                <ellipse cx="85" cy="127" rx="11" ry="11" fill="#050810" />
-                                <ellipse cx="320" cy="127" rx="11" ry="11" fill="#050810" />
-                            </svg>
+                            <img src="polibyd.jpg" alt="Gallery Image 2">
                         </div>
                         <div class="gallery-overlay"><span class="gallery-label" data-i18n="gal2"></span></div>
                     </div>
                 </div>
 
-                <div class="gallery-item" data-aos="fade-up" data-aos-delay="120" onclick="openLightbox()">
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="120">
                     <div class="gallery-inner g3">
                         <div class="gallery-car">
-                            <svg class="car-silhouette" viewBox="0 0 400 160" width="75%" fill="none">
-                                <path
-                                    d="M50 105 C50 105 80 90 120 78 L155 55 C168 48 188 43 215 42 C242 41 275 47 305 58 L350 80 C368 90 375 102 375 108 L375 123 C375 127 372 129 369 129 L348 129 C346 119 334 114 322 114 C310 114 298 119 296 129 L112 129 C110 119 98 114 86 114 C74 114 62 119 60 129 L50 129 C47 129 44 127 44 123 Z"
-                                    fill="white" />
-                                <ellipse cx="86" cy="129" rx="21" ry="21" fill="white" />
-                                <ellipse cx="322" cy="129" rx="21" ry="21" fill="white" />
-                                <ellipse cx="86" cy="129" rx="12" ry="12" fill="#080b10" />
-                                <ellipse cx="322" cy="129" rx="12" ry="12" fill="#080b10" />
-                            </svg>
+                            <img src="cerammal.jpg" alt="Gallery Image 3">
                         </div>
                         <div class="gallery-overlay"><span class="gallery-label" data-i18n="gal3"></span></div>
                     </div>
                 </div>
 
-                <div class="gallery-item" data-aos="fade-up" data-aos-delay="160" onclick="openLightbox()">
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="160">
                     <div class="gallery-inner g4">
                         <div class="gallery-car">
-                            <svg class="car-silhouette" viewBox="0 0 400 160" width="72%" fill="none">
-                                <path
-                                    d="M55 108 C55 108 82 94 118 82 L150 60 C162 53 180 49 210 48 C240 47 272 52 298 62 L342 82 C360 92 368 104 368 108 L368 124 C368 127 366 129 363 129 L342 129 C340 122 330 116 318 116 C306 116 296 122 294 129 L115 129 C113 122 103 116 91 116 C79 116 69 122 67 129 L55 129 C52 129 49 127 49 124 Z"
-                                    fill="white" />
-                                <ellipse cx="91" cy="129" rx="20" ry="20" fill="white" />
-                                <ellipse cx="318" cy="129" rx="20" ry="20" fill="white" />
-                                <ellipse cx="91" cy="129" rx="11" ry="11" fill="#050810" />
-                                <ellipse cx="318" cy="129" rx="11" ry="11" fill="#050810" />
-                            </svg>
+                            <img src="ceramicabyd.jpg" alt="Gallery Image 4">
                         </div>
                         <div class="gallery-overlay"><span class="gallery-label" data-i18n="gal4"></span></div>
                     </div>
                 </div>
 
-                <div class="gallery-item" data-aos="fade-up" data-aos-delay="200" onclick="openLightbox()">
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
                     <div class="gallery-inner g5">
                         <div class="gallery-car">
-                            <svg class="car-silhouette" viewBox="0 0 400 160" width="72%" fill="none">
-                                <path
-                                    d="M48 106 C48 106 76 92 115 80 L148 57 C160 50 180 46 210 45 C240 44 272 50 300 60 L345 82 C362 92 370 103 370 108 L370 124 C370 127 368 129 365 129 L344 129 C342 122 332 116 320 116 C308 116 298 122 296 129 L113 129 C111 122 101 116 89 116 C77 116 67 122 65 129 L48 129 C45 129 42 127 42 124 Z"
-                                    fill="white" />
-                                <ellipse cx="89" cy="129" rx="20" ry="20" fill="white" />
-                                <ellipse cx="320" cy="129" rx="20" ry="20" fill="white" />
-                                <ellipse cx="89" cy="129" rx="11" ry="11" fill="#060c12" />
-                                <ellipse cx="320" cy="129" rx="11" ry="11" fill="#060c12" />
-                            </svg>
+                            <img src="kosmalibu.jpg" alt="Gallery Image 5">
                         </div>
                         <div class="gallery-overlay"><span class="gallery-label" data-i18n="gal5"></span></div>
                     </div>
                 </div>
 
-                <div class="gallery-item" data-aos="fade-up" data-aos-delay="240" onclick="openLightbox()">
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="240">
                     <div class="gallery-inner g6">
                         <div class="gallery-car">
-                            <svg class="car-silhouette" viewBox="0 0 400 160" width="72%" fill="none">
-                                <path
-                                    d="M52 107 C52 107 80 93 116 81 L149 59 C161 52 181 47 212 46 C243 45 274 51 301 62 L346 82 C363 92 371 104 371 108 L371 124 C371 127 369 129 366 129 L345 129 C343 122 333 116 321 116 C309 116 299 122 297 129 L114 129 C112 122 102 116 90 116 C78 116 68 122 66 129 L52 129 C49 129 46 127 46 124 Z"
-                                    fill="white" />
-                                <ellipse cx="90" cy="129" rx="20" ry="20" fill="white" />
-                                <ellipse cx="321" cy="129" rx="20" ry="20" fill="white" />
-                                <ellipse cx="90" cy="129" rx="11" ry="11" fill="#050a0f" />
-                                <ellipse cx="321" cy="129" rx="11" ry="11" fill="#050a0f" />
-                            </svg>
+                            <img src="ledoptika.jpg" alt="Gallery Image 6">
                         </div>
                         <div class="gallery-overlay"><span class="gallery-label" data-i18n="gal6"></span></div>
                     </div>
@@ -1798,6 +1752,8 @@
         </div>
     </section>
 
+
+
     <!-- ABOUT -->
     <section id="about">
         <div class="max-w">
@@ -1805,23 +1761,7 @@
                 <div class="about-visual" data-aos="fade-right">
                     <div class="about-img-wrap">
                         <div class="about-img-inner">
-                            <svg viewBox="0 0 400 500" width="70%" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                style="opacity:0.25;">
-                                <rect x="60" y="80" width="280" height="200" rx="2" stroke="white" stroke-width="1" />
-                                <rect x="80" y="100" width="100" height="60" rx="1" stroke="#00AEEF"
-                                    stroke-width="0.8" />
-                                <rect x="220" y="100" width="100" height="60" rx="1" stroke="#00AEEF"
-                                    stroke-width="0.8" />
-                                <line x1="60" y1="200" x2="340" y2="200" stroke="white" stroke-width="0.5"
-                                    opacity="0.3" />
-                                <circle cx="200" cy="340" r="60" stroke="white" stroke-width="1" />
-                                <circle cx="200" cy="340" r="40" stroke="#00AEEF" stroke-width="0.8" />
-                                <circle cx="200" cy="340" r="20" stroke="white" stroke-width="0.6" opacity="0.5" />
-                                <line x1="140" y1="340" x2="260" y2="340" stroke="#00AEEF" stroke-width="0.5" />
-                                <line x1="200" y1="280" x2="200" y2="400" stroke="#00AEEF" stroke-width="0.5" />
-                                <path d="M80 420 L120 380 L200 360 L280 380 L320 420" stroke="white" stroke-width="1"
-                                    fill="none" opacity="0.4" />
-                            </svg>
+                            <img src="tuning.jpg" alt="About Image">
                             <div
                                 style="position:absolute;inset:0;background:linear-gradient(to bottom right,rgba(0,174,239,0.05),transparent);">
                             </div>
@@ -1917,7 +1857,7 @@
                                 <span class="cl-text">@Uzblain_Tuning</span>
                             </div>
                         </a>
-                        <a href="tel:+998901234567" class="contact-link">
+                        <a href="tel:+998959926600" class="contact-link">
                             <div class="cl-icon">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="1.5">
@@ -2033,12 +1973,14 @@
                 nav_about: "Biz haqimizda",
                 nav_contact: "Aloqa",
                 nav_book: "Yozilish",
+
                 /* Hero */
                 hero_location: "Urganch, Xorazm viloyati, O'zbekiston",
                 hero_quote: "«Professional avtomobil tyuningi, yuqori sifatli ishlar va kuchli mutaxassislar jamoasi.»",
                 hero_btn_services: "Xizmatlarni ko'rish →",
                 hero_btn_gallery: "Galereya →",
-                /* Marquee / Service names (ham menyu uchun) */
+
+                /* Marquee / Services */
                 s1: "Shovqin izolyatsiyasi",
                 s2: "Jilolash",
                 s3: "Keramika",
@@ -2047,74 +1989,85 @@
                 s6: "Deteyling",
                 s7: "Salon qayta qoplash",
                 s8: "LED optika",
+
                 /* Services section */
                 sec_services_label: "Bizning xizmatlar",
                 sec_services_title: "Biz nima qilamiz",
                 sec_services_sub: "Professional tyuning va deteyling — har bir loyiha zargar aniqligi bilan yaratiladi.",
+
                 svc1_name: "Shovqin izolyatsiyasi",
                 svc1_desc: "Ko'p qatlamli kuzov, ark va pol shovqin izolyatsiyasi. Ichkarida to'liq jimlik.",
                 svc2_name: "Jilolash",
-                svc2_desc: "Kuzovni mashinali jilolash — LKP ni zavod yo'ltirig'iga qaytarish.",
+                svc2_desc: "Kuzovni mashinali jilolash — LKP ni zavod ko‘rinishiga qaytarish.",
                 svc3_name: "Keramika",
-                svc3_desc: "9H keramik qoplama. Tirnalishlar, UV va ifloslanishdan uzoq muddatli himoya.",
+                svc3_desc: "9H keramik qoplama. Tirnalish va UV dan himoya.",
                 svc4_name: "Kimyoviy tozalash",
-                svc4_desc: "Salonni chuqur kimyoviy tozalash. Charm, mato, plastik — dastlabki ko'rinishga qaytarish.",
+                svc4_desc: "Salonning chuqur tozalash ishlari.",
                 svc5_name: "Tonirovka",
-                svc5_desc: "Premium LLumar, SolarGard plyonkalari. GOST bo'yicha kafolatli tonirovka.",
+                svc5_desc: "Premium plyonkalar bilan sifatli tonirovka.",
                 svc6_name: "Deteyling",
-                svc6_desc: "To'liq deteyling ishlari majmuasi. Ko'rgazma va sotuvga tayyorlash.",
+                svc6_desc: "To‘liq professional detailing xizmatlari.",
                 svc7_name: "Salon qayta qoplash",
-                svc7_desc: "Nappa va Alcantara charm bilan mualliflik qayta qoplash. Karbon, ekskluziv.",
+                svc7_desc: "Nappa va Alcantara bilan premium interior.",
                 svc8_name: "LED optika",
-                svc8_desc: "LED/LAZER faralarni o'rnatish va sozlash. Adaptiv yorug'lik, kunduzi yonuvchi chiroqlar.",
+                svc8_desc: "LED va lazer faralarni o‘rnatish va sozlash.",
+
                 /* Stats */
                 stat1: "Bajarilgan loyihalar",
                 stat2: "Yillik tajriba",
                 stat3: "Mamnun mijozlar",
                 stat4: "Mijozlarga yordam",
+
                 /* Gallery */
                 sec_gallery_label: "Bizning ishlar",
                 sec_gallery_title: "Galereya",
-                sec_gallery_sub: "Har bir avtomobil — san'at asari. Har bir detal — ustalar nazoratida.",
-                gal1: "Deteyling · BMW M5",
-                gal2: "Jilolash · Mercedes AMG",
-                gal3: "Keramika · Porsche 911",
-                gal4: "Tonirovka · Audi RS6",
-                gal5: "Qayta qoplash · Range Rover",
-                gal6: "LED optika · Lexus LX",
+                sec_gallery_sub: "Har bir avtomobil — san'at asari.",
+
+                gal1: "Shovqin izolyatsiyasi · Jentra",
+                gal2: "Jilolash · BYD",
+                gal3: "Keramika · Malibu",
+                gal4: "Tonirovka · BYD",
+                gal5: "Kosmetika · Malibu",
+                gal6: "LED optika · Cobalt",
+
                 /* About */
                 sec_about_label: "Studiya haqida",
                 sec_about_title: "Nima uchun UZBLAIN Performance?",
-                sec_about_sub: "Biz oddiy ustaxona emasmiz — mukammallik laboratoriyasimiz. Har bir avtomobil individual yondashuvga va nemis atelye darajasiga sazovor bo'ladi.",
+                sec_about_sub: "Biz mukammallik ustaxonasimiz.",
+
                 about_years: "Yillik tajriba",
+
                 feat1_title: "Professional jamoa",
-                feat1_desc: "Yetakchi jahon brendlarining sertifikatlari va ko'p yillik tajribaga ega ustalar.",
+                feat1_desc: "Sertifikatlangan ustalar.",
                 feat2_title: "Premium materiallar",
-                feat2_desc: "Faqat original materiallar: 3M, LLumar, Nappa charm, Gyeon keramika.",
+                feat2_desc: "Faqat original brendlar.",
                 feat3_title: "Sifat kafolati",
-                feat3_desc: "Barcha ish turlari uchun rasmiy kafolat. Har bosqichda sifat nazorati.",
+                feat3_desc: "Har bir ishga kafolat.",
                 feat4_title: "Individual yondashuv",
-                feat4_desc: "Har bir mijoz uchun shaxsiy menejer. Sizning xohishingiz bo'yicha ishlayabmiz.",
+                feat4_desc: "Har mijozga maxsus xizmat.",
+
                 /* Contact */
                 sec_contact_label: "Biz bilan bog'laning",
                 sec_contact_title: "Aloqa",
-                sec_contact_sub: "Loyihangizni muhokama qilishga tayyormisiz? Yozing — bir soat ichida javob beramiz.",
-                contact_channels: "Bizning kanallar",
-                contact_touch: "Bog'lanaylik",
-                contact_hours: "Har kuni 9:00 dan 21:00 gacha ishlaymiz.<br>Urganch, O'zbekiston.",
+                sec_contact_sub: "Bizga yozing — tez javob beramiz.",
+
+                contact_channels: "Kanallar",
+                contact_touch: "Bog‘lanish",
+                contact_hours: "9:00 - 21:00",
                 contact_phone_label: "Telefon",
                 contact_addr_label: "Manzil",
                 contact_addr_text: "Urganch, O'zbekiston",
+
                 /* Form */
-                form_title: "Xizmatga yozilish",
+                form_title: "Yozilish",
                 form_name: "Ismingiz",
-                form_phone: "Telefon raqamingiz",
+                form_phone: "Telefon",
                 form_select_default: "Xizmatni tanlang",
-                form_message: "Avtomobilingiz va xohishlaringiz haqida gapirib bering...",
-                form_submit: "Ariza yuborish",
-                /* Misc */
+                form_message: "Izoh yozing...",
+                form_submit: "Yuborish",
+
                 close: "Yopish",
-                footer_copy: "© 2026 UZBLAIN Performance. Barcha huquqlar himoyalangan.",
+                footer_copy: "© 2026 UZBLAIN Performance."
             },
 
             ru: {
@@ -2123,10 +2076,12 @@
                 nav_about: "О нас",
                 nav_contact: "Контакты",
                 nav_book: "Записаться",
+
                 hero_location: "Ургенч, Хорезмская область, Узбекистан",
-                hero_quote: "«Профессиональный автотюнинг, высокое качество работ и сильная команда специалистов.»",
-                hero_btn_services: "Смотреть услуги →",
+                hero_quote: "«Профессиональный автотюнинг, высокое качество работ и сильная команда.»",
+                hero_btn_services: "Услуги →",
                 hero_btn_gallery: "Галерея →",
+
                 s1: "Шумоизоляция",
                 s2: "Полировка",
                 s3: "Керамика",
@@ -2135,67 +2090,67 @@
                 s6: "Детейлинг",
                 s7: "Перетяжка салона",
                 s8: "LED оптика",
-                sec_services_label: "Наши услуги",
+
+                sec_services_label: "Услуги",
                 sec_services_title: "Что мы делаем",
-                sec_services_sub: "Профессиональный тюнинг и детейлинг — каждый проект создаётся с точностью ювелира.",
+                sec_services_sub: "Профессиональный тюнинг и детейлинг.",
+
                 svc1_name: "Шумоизоляция",
-                svc1_desc: "Многослойная шумоизоляция кузова, арок и пола. Полная тишина внутри.",
                 svc2_name: "Полировка",
-                svc2_desc: "Машинная полировка кузова с восстановлением ЛКП до заводского блеска.",
                 svc3_name: "Керамика",
-                svc3_desc: "Керамическое покрытие 9H. Долговечная защита от царапин, UV и загрязнений.",
                 svc4_name: "Химчистка",
-                svc4_desc: "Глубокая химчистка салона. Кожа, ткань, пластик — возвращаем первозданный вид.",
                 svc5_name: "Тонировка",
-                svc5_desc: "Премиальные плёнки LLumar, SolarGard. Тонировка по ГОСТу с гарантией.",
                 svc6_name: "Детейлинг",
-                svc6_desc: "Полный комплекс детейлинговых работ. Подготовка к выставкам и продаже.",
                 svc7_name: "Перетяжка салона",
-                svc7_desc: "Авторская перетяжка кожей Nappa и Alcantara. Алькантара, карбон, эксклюзив.",
                 svc8_name: "LED оптика",
-                svc8_desc: "Установка и тюнинг LED/LAZER фар. Адаптивный свет, дневные ходовые огни.",
-                stat1: "Проектов выполнено",
-                stat2: "Лет на рынке",
-                stat3: "Довольных клиентов",
-                stat4: "Поддержка клиентов",
+
+                stat1: "Проектов",
+                stat2: "Лет опыта",
+                stat3: "Клиентов",
+                stat4: "Поддержка",
+
                 sec_gallery_label: "Наши работы",
                 sec_gallery_title: "Галерея",
-                sec_gallery_sub: "Каждый автомобиль — произведение искусства. Каждая деталь — под контролем мастеров.",
-                gal1: "Детейлинг · BMW M5",
-                gal2: "Полировка · Mercedes AMG",
-                gal3: "Керамика · Porsche 911",
-                gal4: "Тонировка · Audi RS6",
-                gal5: "Перетяжка · Range Rover",
-                gal6: "LED оптика · Lexus LX",
+                sec_gallery_sub: "Каждый автомобиль — искусство.",
+
+                gal1: "Шумоизоляция · Jentra",
+                gal2: "Полировка · BYD",
+                gal3: "Керамика · Malibu",
+                gal4: "Тонировка · BYD",
+                gal5: "Косметика · Malibu",
+                gal6: "LED оптика · Cobalt",
+
                 sec_about_label: "О студии",
-                sec_about_title: "Почему выбирают UZBLAIN Performance?",
-                sec_about_sub: "Мы не просто мастерская — мы лаборатория совершенства. Каждый автомобиль, попадающий к нам, получает индивидуальный подход и обслуживание уровня немецких ателье.",
+                sec_about_title: "UZBLAIN Performance",
+                sec_about_sub: "Мы лаборатория качества.",
+
                 about_years: "лет опыта",
-                feat1_title: "Профессиональная команда",
-                feat1_desc: "Мастера с многолетним опытом и сертификатами ведущих мировых брендов.",
-                feat2_title: "Премиальные материалы",
-                feat2_desc: "Только оригинальные материалы: 3M, LLumar, Nappa-кожа, Gyeon-керамика.",
-                feat3_title: "Гарантия качества",
-                feat3_desc: "Официальная гарантия на все виды работ. Контроль качества на каждом этапе.",
+
+                feat1_title: "Команда",
+                feat2_title: "Материалы",
+                feat3_title: "Гарантия",
                 feat4_title: "Индивидуальный подход",
-                feat4_desc: "Персональный менеджер для каждого клиента. Работаем под ваши пожелания.",
-                sec_contact_label: "Связь с нами",
-                sec_contact_title: "Контакты",
-                sec_contact_sub: "Готовы обсудить ваш проект? Напишите нам — ответим в течение часа.",
-                contact_channels: "Наши каналы",
-                contact_touch: "Будем на связи",
-                contact_hours: "Работаем ежедневно с 9:00 до 21:00.<br>Ташкент, Узбекистан.",
+
+                sec_contact_label: "Контакты",
+                sec_contact_title: "Связь",
+                sec_contact_sub: "Напишите нам — ответим быстро.",
+
+                contact_channels: "Каналы",
+                contact_touch: "Связь",
+                contact_hours: "9:00 - 21:00",
                 contact_phone_label: "Телефон",
                 contact_addr_label: "Адрес",
-                contact_addr_text: "Ташкент, Узбекистан",
-                form_title: "Записаться на сервис",
-                form_name: "Ваше имя",
-                form_phone: "Номер телефона",
+                contact_addr_text: "Ургенч, Узбекистан",
+
+                form_title: "Запись",
+                form_name: "Имя",
+                form_phone: "Телефон",
                 form_select_default: "Выберите услугу",
-                form_message: "Расскажите о вашем автомобиле и пожеланиях...",
-                form_submit: "Отправить заявку",
+                form_message: "Сообщение...",
+                form_submit: "Отправить",
+
                 close: "Закрыть",
-                footer_copy: "© 2026 UZBLAIN Performance. Все права защищены.",
+                footer_copy: "© 2026 UZBLAIN Performance."
             },
 
             en: {
@@ -2204,79 +2159,81 @@
                 nav_about: "About",
                 nav_contact: "Contact",
                 nav_book: "Book Now",
-                hero_location: "Urgench, Khorezm Region, Uzbekistan",
-                hero_quote: "«Professional car tuning, top-tier craftsmanship and a dedicated team of specialists.»",
-                hero_btn_services: "View Services →",
+
+                hero_location: "Urgench, Uzbekistan",
+                hero_quote: "Professional car tuning and detailing.",
+                hero_btn_services: "Services →",
                 hero_btn_gallery: "Gallery →",
-                s1: "Sound Deadening",
+
+                s1: "Sound insulation",
                 s2: "Polishing",
-                s3: "Ceramic Coating",
-                s4: "Interior Cleaning",
-                s5: "Window Tinting",
+                s3: "Ceramic coating",
+                s4: "Interior cleaning",
+                s5: "Tinting",
                 s6: "Detailing",
-                s7: "Interior Re-upholstery",
-                s8: "LED Lighting",
-                sec_services_label: "Our Services",
-                sec_services_title: "What We Do",
-                sec_services_sub: "Professional tuning and detailing — every project crafted with jeweler's precision.",
-                svc1_name: "Sound Deadening",
-                svc1_desc: "Multi-layer sound deadening for body, wheel arches and floor. Complete silence inside.",
+                s7: "Interior upholstery",
+                s8: "LED lighting",
+
+                sec_services_label: "Services",
+                sec_services_title: "What we do",
+                sec_services_sub: "Premium car care and tuning.",
+
+                svc1_name: "Sound insulation",
                 svc2_name: "Polishing",
-                svc2_desc: "Machine polishing restoring paintwork to factory-fresh showroom shine.",
-                svc3_name: "Ceramic Coating",
-                svc3_desc: "9H ceramic coating. Long-lasting protection against scratches, UV and contaminants.",
-                svc4_name: "Interior Cleaning",
-                svc4_desc: "Deep interior detailing. Leather, fabric, plastic — restored to factory condition.",
-                svc5_name: "Window Tinting",
-                svc5_desc: "Premium LLumar & SolarGard films. Certified tinting with warranty.",
+                svc3_name: "Ceramic coating",
+                svc4_name: "Interior cleaning",
+                svc5_name: "Tinting",
                 svc6_name: "Detailing",
-                svc6_desc: "Full detailing package. Show-car preparation and pre-sale conditioning.",
-                svc7_name: "Interior Re-upholstery",
-                svc7_desc: "Bespoke upholstery in Nappa leather & Alcantara. Carbon inserts, exclusive finishes.",
-                svc8_name: "LED Lighting",
-                svc8_desc: "LED/LASER headlight installation and tuning. Adaptive lighting and DRL upgrades.",
-                stat1: "Projects Completed",
-                stat2: "Years on Market",
-                stat3: "Satisfied Clients",
-                stat4: "Client Support",
+                svc7_name: "Upholstery",
+                svc8_name: "LED lighting",
+
+                stat1: "Projects",
+                stat2: "Years",
+                stat3: "Clients",
+                stat4: "Support",
+
                 sec_gallery_label: "Our Work",
                 sec_gallery_title: "Gallery",
-                sec_gallery_sub: "Every car is a work of art. Every detail is under expert control.",
-                gal1: "Detailing · BMW M5",
-                gal2: "Polishing · Mercedes AMG",
-                gal3: "Ceramic · Porsche 911",
-                gal4: "Tinting · Audi RS6",
-                gal5: "Re-upholstery · Range Rover",
-                gal6: "LED Lighting · Lexus LX",
-                sec_about_label: "About the Studio",
-                sec_about_title: "Why Choose UZBLAIN Performance?",
-                sec_about_sub: "We're not just a workshop — we're a laboratory of perfection. Every car that comes to us receives individual attention and German atelier-level service.",
-                about_years: "Years Experience",
-                feat1_title: "Professional Team",
-                feat1_desc: "Masters with years of experience and certifications from the world's leading brands.",
-                feat2_title: "Premium Materials",
-                feat2_desc: "Only original materials: 3M, LLumar, Nappa leather, Gyeon ceramic.",
-                feat3_title: "Quality Guarantee",
-                feat3_desc: "Official warranty on all types of work. Quality control at every stage.",
-                feat4_title: "Individual Approach",
-                feat4_desc: "Personal manager for every client. We work to your specifications.",
-                sec_contact_label: "Get in Touch",
-                sec_contact_title: "Contact",
-                sec_contact_sub: "Ready to discuss your project? Message us — we reply within an hour.",
-                contact_channels: "Our Channels",
-                contact_touch: "Let's Connect",
-                contact_hours: "Open daily 9:00 AM – 9:00 PM.<br>Urgench, Uzbekistan.",
+                sec_gallery_sub: "Every car is art.",
+
+                gal1: "Sound insulation · Jentra",
+                gal2: "Polishing · BYD",
+                gal3: "Ceramic · Malibu",
+                gal4: "Tinting · BYD",
+                gal5: "Cosmetics · Malibu",
+                gal6: "LED lighting · Cobalt",
+
+                sec_about_label: "About",
+                sec_about_title: "UZBLAIN Performance",
+                sec_about_sub: "We are perfection builders.",
+
+                about_years: "years experience",
+
+                feat1_title: "Team",
+                feat2_title: "Materials",
+                feat3_title: "Warranty",
+                feat4_title: "Custom approach",
+
+                sec_contact_label: "Contact",
+                sec_contact_title: "Get in touch",
+                sec_contact_sub: "We reply fast.",
+
+                contact_channels: "Channels",
+                contact_touch: "Connect",
+                contact_hours: "9:00 - 21:00",
                 contact_phone_label: "Phone",
                 contact_addr_label: "Address",
                 contact_addr_text: "Urgench, Uzbekistan",
-                form_title: "Book a Service",
-                form_name: "Your name",
-                form_phone: "Phone number",
-                form_select_default: "Select a service",
-                form_message: "Tell us about your car and what you need...",
-                form_submit: "Submit Request",
+
+                form_title: "Book",
+                form_name: "Name",
+                form_phone: "Phone",
+                form_select_default: "Select service",
+                form_message: "Message...",
+                form_submit: "Send",
+
                 close: "Close",
-                footer_copy: "© 2026 UZBLAIN Performance. All rights reserved.",
+                footer_copy: "© 2026 UZBLAIN Performance."
             }
         };
 
