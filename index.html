@@ -799,49 +799,87 @@
 
         .about-visual {
             position: relative;
-        }
-
-        .about-img-wrap {
             width: 100%;
-            padding-bottom: 120%;
-            background: var(--dark2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .about-img-inner {
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse at 50% 40%, #0c1e2c 0%, #030a10 100%);
+            height: 420px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
+        /* wrapper */
+        .about-img-wrap {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 18px;
+            background: var(--dark2);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        /* image container */
+        .about-img-inner {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+        }
+
+        /* 🔥 MAIN FIX: image quality + no stretch */
+        .about-img-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* rasm buzilmasligi uchun */
+            object-position: center;
+            /* markazlash */
+            display: block;
+
+            /* premium sharp effect */
+            transform: scale(1.02);
+            filter: contrast(1.05) saturate(1.05);
+        }
+
+        /* overlay gradient */
+        .about-img-inner div {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom right,
+                    rgba(0, 174, 239, 0.06),
+                    transparent);
+        }
+
+        /* accent line */
         .about-accent-line {
             position: absolute;
-            right: -20px;
+            right: -18px;
             top: 40px;
             width: 2px;
             height: 60%;
             background: linear-gradient(to bottom, var(--blue), transparent);
         }
 
+        /* accent box */
         .about-accent-box {
             position: absolute;
             bottom: -24px;
             left: -24px;
             width: 120px;
             height: 120px;
-            border: 1px solid rgba(0, 174, 239, 0.2);
+            border: 1px solid rgba(0, 174, 239, 0.25);
             background: var(--dark3);
+
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            flex-direction: column;
             gap: 4px;
+
+            backdrop-filter: blur(10px);
         }
 
+        /* number */
         .about-accent-box .num {
             font-family: 'Bebas Neue', sans-serif;
             font-size: 2.4rem;
@@ -849,6 +887,7 @@
             line-height: 1;
         }
 
+        /* label */
         .about-accent-box .lbl {
             font-family: 'Rajdhani', sans-serif;
             font-size: 0.65rem;
@@ -1761,7 +1800,7 @@
                 <div class="about-visual" data-aos="fade-right">
                     <div class="about-img-wrap">
                         <div class="about-img-inner">
-                            <img src="tunings.jpg" alt="About Image">
+                            <img src="tuning.jpg" alt="About Image">
                             <div
                                 style="position:absolute;inset:0;background:linear-gradient(to bottom right,rgba(0,174,239,0.05),transparent);">
                             </div>
